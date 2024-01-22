@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BMICalc</string>
+    <string name="calculate">Calculate</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="age">Age</string>
+    <string name="your_results">Your Results</string>
+    <string name="height">Height</string>
+    <string name="normal">Normal</string>
+    <string name="_24.35">24.35</string>
+    <string name="_175">175</string>
+    <string name="cm">cm</string>
+    <string name="_55">55</string>
+    <string name="_20">20</string>
+    <string name="normal_range_is_18_5_24.9">Normal range is 18.5-24.9</string>
+    <string name="male_symbol">Male Symbol</string>
+    <string name="female_symbol" />
+    <string name="fmale">Male</string>
+</resources>
