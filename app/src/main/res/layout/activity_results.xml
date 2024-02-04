@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:background="#072e33"
     tools:context=".ResultsActivity">
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
-    tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/toolbarTitle"
         android:layout_width="wrap_content"
@@ -27,10 +29,11 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="5dp"
         app:cardBackgroundColor="#05161A"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline13">
@@ -74,26 +77,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fmale"
+                android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 android:typeface="monospace"
 
                 app:layout_constraintBottom_toTopOf="@+id/bti"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/resultsIndex2" />
+
             <TextView
                 android:id="@+id/bti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/normal_range_is_18_5_24.9"
+                android:textColor="#7DF6EB"
+                android:textSize="20sp"
+                android:typeface="monospace"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@string/normal_range_is_18_5_24.9"
-                android:textSize="20sp"
-                android:textColor="#7DF6EB"
-                android:typeface="monospace"
                 app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -109,13 +113,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="332dp" />
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrier2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="top"
-                app:constraint_referenced_ids="results2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -125,5 +122,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="128dp" />
+        app:layout_constraintGuide_begin="64dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="547dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

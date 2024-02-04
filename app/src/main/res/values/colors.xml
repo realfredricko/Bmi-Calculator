@@ -2,7 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorButton">#E57226</color>
-    <color name="cardClicked">#87AE88</color>
-    <color name="colorPrimary">#2E6067</color>
+    <color name="colorPrimaryDark">#072e33</color>
+    <color name="defaultCardBackgroundColor">#072e33</color>
+    <color name="selectedCardBackgroundColor">#BBC8CA</color>
+    <color name="colorPrimary">#023037</color>
+    <color name="textClicked">#87AE88</color>
+    <color name="unselectedText">#FFFFFF</color>
+    <color name="imageClicked">#87AE88</color>
+    <color name="unselectedImage">#FFFFFF</color>
+    <color name="statusBarColor">#072e33</color>
 </resources>

@@ -12,54 +12,47 @@ import kotlin.math.pow
 
 class ResultsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultsBinding
-   /* private var bmi: String = ""
-    private var intBmi: Float = 0.0f
-    var height: String = ""
-    private var intHeight: Float = 0.0f;
-    private var intWeight: Float = 0.0f*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       val height = intent.getIntExtra("height", 0)
-       val weight = intent.getIntExtra("weight", 0)
-       val typeOfUser = intent.getIntExtra("gender",0)
+        var height: Int = 0
+        var weight: Int = 0
+        var gender: String = "0"
         binding = ActivityResultsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)//Hides default title
             setHomeAsUpIndicator(R.drawable.back_arrow_4)
-            //custom title
-            binding.toolbarTitle.text = "BMI Result" //Sets custom title
         }
-       binding.resultGender
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-         val  bmi = weight / (height / 100.0).pow(2.0)
+        //custom title
+        binding.toolbarTitle.text = "BMI Result" //Sets custom title
+        val intent = intent
+        //Get values from the previous screen
+        height = intent.getIntExtra("height", 0)
+        weight = intent.getIntExtra("weight", 0)
+        binding.resultGender.text = intent.getStringExtra("gender").toString()
 
-            //get result with two decimal places
-            val intBmi = String.format("%.2f", bmi).toFloat()
-
-            if (intBmi < 16) {
-                binding.resultsIndex1.text = "Severe Thinness"
-            } else if (intBmi < 16.9 && intBmi > 16) {
-                binding.resultsIndex1.text = "Moderate Thinness"
-            } else if (intBmi < 25 && intBmi > 18.5) {
-                binding.resultsIndex1.text = "Normal"
-            } else if (intBmi < 25 && intBmi > 18.4) {
-                binding.resultsIndex1.text = "Over Weight"
-            } else {
-                binding.resultsIndex1.text = "Obese"
+        val bmi = weight / (height / 100.0).pow(2.0)
+        //get result with two decimal places
+        val intBmi = String.format("%.2f", bmi).toFloat()
+displayResult(intBmi)
+    }
+        private fun displayResult(bmi:Float) {
+            binding.resultsIndex1.text = bmi.toString()
+            when {
+                bmi < 16.0 -> binding.resultsIndex1.append("\nSevere Thinness")
+                bmi < 16.9 && bmi < 16 -> binding.resultsIndex1.append("\nModerate Thinness")
+                bmi < 25 && bmi < 18.5 -> binding.resultsIndex1.append("\nNormal")
+                bmi < 25 && bmi > 18.4 -> binding.resultsIndex1.append("\nOver Weight")
+                else -> binding.resultsIndex1.append("\nObese")
             }
-       binding.resultsIndex2.text = displayResult(intBmi).toString()
+
         }
-    override fun onSupportNavigateUp(): Boolean{
-        onBackPressedDispatcher
-        return true
+
     }
 
-}
-        private fun displayResult(intBmi: Float): Float {
-            return intBmi
-        }
+
 
 
