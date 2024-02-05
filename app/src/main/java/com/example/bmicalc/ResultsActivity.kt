@@ -40,7 +40,7 @@ class ResultsActivity : AppCompatActivity() {
 displayResult(intBmi)
     }
         private fun displayResult(bmi:Float) {
-            binding.resultsIndex1.text = bmi.toString()
+            binding.resultsIndex2.text = bmi.toString()
             when {
                 bmi < 16.0 -> binding.resultsIndex1.append("\nSevere Thinness")
                 bmi < 16.9 && bmi < 16 -> binding.resultsIndex1.append("\nModerate Thinness")
